@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Layout</title>
+    <title>Tajemství temného Kovaříka</title>
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -19,11 +19,54 @@
     </ul>
 </nav>
 <div id="obsah">
-    <div id=""><h1>Tajná místnost</h1></div>
+    <div style="text-align: center;"><h1>Tajná místnost</h1></div>
     <div class="padding-wrapper">
-        <p style="text-align: center;">Vojta tajně crackuje asijský torty.</p>
-        <img src="img/Vojta.jpeg" alt="Vyfoceno 26.5.2020, Jakubem Čermákem">
+        <p class="rainbow-glow" style="text-align: center;">Vojta tajně crackuje asijský torty.</p>
+
+        <a href="#" onclick="openModal('img/Vojta.jpeg'); return false;">
+            <img src="img/Vojta.jpeg" alt="Vyfoceno 26.5.2020, Jakubem Čermákem">
+        </a>
     </div>
 </div>
+
+<div id="myModal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+</div>
+<script>
+    // Get the modal, image, and caption elements
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+
+    // Function to open the modal
+    function openModal(imageSrc) {
+        modal.style.display = "block";
+        modalImg.src = imageSrc;
+        // Optional: Set caption text based on the image's alt attribute if you had one
+        // var altText = document.querySelector('img[src="' + imageSrc + '"]').alt;
+        // captionText.innerHTML = altText;
+    }
+
+    // Function to close the modal
+    // It is triggered by clicking the modal background (thanks to the onclick="closeModal()" in the HTML)
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    // Also close the modal if the user clicks the 'x'
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function() {
+        closeModal();
+    }
+</script>
+<audio controls autoplay loop>
+    <source src="audio/Christmas.mp3" type="audio/mpeg">
+
+</audio>
+<button onclick="document.querySelector('audio').muted = false;">
+    Click to UNMUTE Music
+</button>
 </body>
 </html>

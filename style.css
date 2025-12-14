@@ -7,7 +7,7 @@
 @media screen and (orientation: landscape)
 {
     nav#hlavni-menu {
-        background-color: beige;
+        background-color: darkgreen;
         float: left;
         height: 100vh;
     }
@@ -58,7 +58,7 @@ nav#hlavni-menu ul li a {
 }
 nav#hlavni-menu  ul li a:hover /*aktivuje se pri najeti mysi */
 {
-    background-color: blue;
+    background-color: darkred;
     border-style: inset;
 }
 nav#hlavni-menu ul li a.aktivni
@@ -67,11 +67,147 @@ nav#hlavni-menu ul li a.aktivni
     border-style: inset;
 }
 div#obsah {
-    background-color: green;
+    background-color: darkred;
 
     overflow: auto;
 }
 
 div#obsah div {
     padding: 20px;
+}
+/* -------------------- Lightbox/Modal Styles -------------------- */
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top (should be higher than all other elements) */
+    padding-top: 100px; /* Location of the box - gives space at the top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (The Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s; /* Smooth transition for hover effect */
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* -------------------- Rainbow Glow Text Effect -------------------- */
+
+/* 1. Define the element styling and apply the animation */
+.rainbow-glow {
+    /* Base color (or inherit, but this ensures a starting point) */
+    color: white;
+
+    /* Apply the animation:
+       - name: rainbow-cycle
+       - duration: 6 seconds
+       - timing: linear (constant speed)
+       - iteration: infinite (loops forever) */
+    animation: rainbow-cycle 6s linear infinite;
+
+    /* Add a subtle text shadow for the glow effect */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+
+    /* Optional: Make the text bold for better visibility */
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* 2. Define the keyframes for the rainbow color cycle */
+@keyframes rainbow-cycle {
+    0%   { color: red; text-shadow: 0 0 5px red, 0 0 15px red; }
+    15%  { color: orange; text-shadow: 0 0 5px orange, 0 0 15px orange; }
+    30%  { color: yellow; text-shadow: 0 0 5px yellow, 0 0 15px yellow; }
+    45%  { color: limegreen; text-shadow: 0 0 5px limegreen, 0 0 15px limegreen; }
+    60%  { color: blue; text-shadow: 0 0 5px blue, 0 0 15px blue; }
+    75%  { color: indigo; text-shadow: 0 0 5px indigo, 0 0 15px indigo; }
+    100% { color: violet; text-shadow: 0 0 5px violet, 0 0 15px violet; }
+}
+/* ---------------------------------- */
+/* Navigation Glow Effect (Red & Green Cycle) */
+/* ---------------------------------- */
+
+#hlavni-menu ul li a {
+    /* Base color (or inherit, but this ensures a starting point) */
+    color: #38b438; /* Starting with a dark green color */
+
+    /* Apply the new animation:
+       - name: red-green-cycle
+       - duration: 3 seconds (faster cycle looks better for two colors)
+       - timing: linear (constant speed)
+       - iteration: infinite (loops forever) */
+    animation: red-green-cycle 3s linear infinite;
+
+    /* Ensure strong text shadow and font weight */
+    font-weight: bold;
+    font-size: 1.1em; /* You can adjust the size */
+    text-decoration: none; /* Usually good for menu links */
+}
+
+/* 2. Define the keyframes for the Red and Green color cycle */
+@keyframes red-green-cycle {
+    /* State 1: Red Glow */
+    0% {
+        color: #ff0000; /* Bright red text */
+        /* Red glow: multiple shadows for depth */
+        text-shadow: 0 0 5px #ff0000,
+        0 0 15px #ff0000,
+        0 0 30px #ff0000;
+    }
+
+    /* Transition point (Halfway between Red and Green) */
+    50% {
+        color: #00ff00; /* Bright green text */
+        /* Green glow: multiple shadows for depth */
+        text-shadow: 0 0 5px #00ff00,
+        0 0 15px #00ff00,
+        0 0 30px #00ff00;
+    }
+
+    /* State 2: Back to Red (or repeat the green state until 100% to ensure a smooth loop) */
+    100% {
+        color: #ff0000; /* Bright red text */
+        /* Red glow */
+        text-shadow: 0 0 5px #ff0000,
+        0 0 15px #ff0000,
+        0 0 30px #ff0000;
+    }
 }
