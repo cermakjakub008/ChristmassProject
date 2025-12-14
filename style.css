@@ -1,0 +1,77 @@
+@media print{
+    nav#hlavni-menu
+    {
+        display:none
+    }
+}
+@media screen and (orientation: landscape)
+{
+    nav#hlavni-menu {
+        background-color: beige;
+        float: left;
+        height: 100vh;
+    }
+    div#obsah
+    {
+        height: 100vh;
+    }
+}
+@media screen and  (orientation: portrait)
+{
+    nav#hlavni-menu ul li a
+    {
+        text-align: center;
+    }
+    div#obsah div h1
+    {
+        text-align: center;
+    }
+    div#obsah div
+    {
+        text-align: justify;
+    }
+
+}
+
+body {
+    margin: 0;
+    background-color: darkred;
+}
+
+nav#hlavni-menu {
+
+
+}
+nav#hlavni-menu {
+    list-style: square;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+nav#hlavni-menu ul li a {
+    text-decoration: none; color: black;
+    border: gray outset 2px;
+    border-radius: 5px;
+    padding: 2px 5px;
+    display: block;
+    margin-bottom: 5px;
+}
+nav#hlavni-menu  ul li a:hover /*aktivuje se pri najeti mysi */
+{
+    background-color: blue;
+    border-style: inset;
+}
+nav#hlavni-menu ul li a.aktivni
+{
+    background-color: darkgreen;
+    border-style: inset;
+}
+div#obsah {
+    background-color: green;
+
+    overflow: auto;
+}
+
+div#obsah div {
+    padding: 20px;
+}
